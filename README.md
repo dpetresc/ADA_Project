@@ -27,7 +27,7 @@ DATA COLUMNS:
 - review_body: The review text.
 - review_date: The date the review was written.
 
-For the books color, we will use this dataset: https://github.com/uchidalab/book-dataset/tree/master.
+For the books color, we will use: https://github.com/uchidalab/book-dataset/tree/master.
 
 # A list of internal milestones up until project milestone 2
 - 05/11/2018 - 11/11/2018: Data collection and wrangling
