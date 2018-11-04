@@ -10,8 +10,6 @@ Amazon Customer Reviews (a.k.a. Product Reviews) is one of Amazon’s iconic pro
 - Can we find more information with this dataset or should we combine it with others ?
 
 # Dataset
-file:///home/dap/amazon_multiling/readme.html
-
 DATA COLUMNS:
 - marketplace: 2 letter country code of the marketplace where the review was written.
 - customer_id: Random identifier that can be used to aggregate reviews written by a single author.
