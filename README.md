@@ -1,11 +1,10 @@
 # Title
 
 # Abstract
-A 150 word description of the project idea, goals, dataset used. What story you would like to tell and why? What's the motivation behind your project?
-Amazon Customer Reviews (a.k.a. Product Reviews) is one of Amazon’s iconic products. In a period of over two decades since the first review in 1995, millions of Amazon customers have contributed over a hundred million reviews to express opinions and describe their experiences regarding products on the Amazon.com website.
+How the color of a book's cover could influence the rate ? This is the main question we will try to answer by investigating the Amazon Customer Reviews dataset. This dataset provides a huge amount of reviews from 1995 to 2015, so we will also try to find how the reviews evolve over time. 
 
 # Research questions
-- How has reviews evolued over time (from 1995 to 2015) ?
+- How has reviews evolved over time (from 1995 to 2015) ?
 - How are the reviews different accross languages and country (5 countries) ?
 - Can we find more information with this dataset or should we combine it with others ?
 
