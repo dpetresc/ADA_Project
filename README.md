@@ -1,4 +1,5 @@
 # Title
+Relationship between book's color and rating 
 
 # Abstract
 How the color of a book's cover could influence the rate ? This is the main question we will try to answer by investigating the Amazon Customer Reviews dataset. This dataset provides a huge amount of reviews from 1995 to 2015, so we will also try to find how the reviews evolve over time. 
