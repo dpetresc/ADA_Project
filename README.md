@@ -6,7 +6,7 @@ How the color of a book's cover could influence the rate ? This is the main ques
 # Research questions
 - How has reviews evolved over time (from 1995 to 2015) ?
 - How are the reviews different accross languages and country (5 countries) ?
-- Can we find more information with this dataset or should we combine it with others ?
+- How the color of the book's cover influence the rating ?
 
 # Dataset
 DATA COLUMNS:
@@ -32,4 +32,4 @@ DATA COLUMNS:
 - 19/11/2018 - 25/11/2018: Data Visualization
 
 # Questions for TAa
-Add here some questions you have for us, in general or project-specific.
+The provided dataset does not seem to have image information for the cover. Do we missed it ? Should we merge with another dataset ?
