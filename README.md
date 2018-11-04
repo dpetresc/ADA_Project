@@ -7,9 +7,10 @@ Amazon Customer Reviews (a.k.a. Product Reviews) is one of Amazon’s iconic pro
 # Research questions
 - How has reviews evolued over time (from 1995 to 2015) ?
 - How are the reviews different accross languages and country (5 countries) ?
+- Can we find more information with this dataset or should we combine it with others ?
 
 # Dataset
-List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show us you've read the docs and some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
+file:///home/dap/amazon_multiling/readme.html
 
 DATA COLUMNS:
 marketplace       - 2 letter country code of the marketplace where the review was written.
