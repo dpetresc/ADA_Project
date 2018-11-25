@@ -1,16 +1,19 @@
 # Title
-Relationship between book's color and rating 
+Relationship between book's color and rating
 
 # Abstract
-How the color of a book's cover could influence the rate ? This is the main question we will try to answer by investigating the Amazon Customer Reviews dataset. This dataset provides a huge amount of reviews from 1995 to 2015, so we will also try to find how the reviews evolve over time. 
+How the color of a book's cover could influence the rate ? This is the main question we will try to answer by investigating the Amazon Customer Reviews dataset and the Amazon Book Cover dataset. We are looking for a relationship between the image and the corresponding review. If such relation is significant, we will discuss how and why. Also we want to see the evolution along time, both on the cover image, and on the reviews themselves. That means, are there significant color changes on book covers from 1995 to 2015 ? is the ratings average increasing or decreasing from 1995 to 2015 ?
 
 # Research questions
 - How has reviews evolved over time (from 1995 to 2015) ?
-- How are the reviews different accross languages and country (5 countries) ?
-- How the color of the book's cover influence the rating ?
+- How has book covers evolved over time (from 1995 to 2015) ?
+- What is the relationship between book cover and ratings ?
 
 # Dataset
-DATA COLUMNS:
+
+Two different dataset concerning books will be used. The first one is the Amazon Customer Reviews dataset which contains a huge amount of reviews from 1995 to 2015. This dataset is available from the ic cluster. The second one is an Amazon Book Cover dataset found on github : https://github.com/uchidalab/book-dataset/blob/master/Task2/book32-listing.csv.
+
+Columns details for the Amazon Customer Reviews dataset
 - marketplace: 2 letter country code of the marketplace where the review was written.
 - customer_id: Random identifier that can be used to aggregate reviews written by a single author.
 - review_id: The unique ID of the review.
@@ -27,12 +30,31 @@ DATA COLUMNS:
 - review_body: The review text.
 - review_date: The date the review was written.
 
-For the books color, we will use: https://github.com/uchidalab/book-dataset/tree/master.
+Columns details for the Amazon Book Cover dataset
+- [AMAZON INDEX (ASIN)] : The amazon index of the book. It corresponds to the column 'product_id' of the Review dataset.
+- [FILENAME] : The name of the image
+- [IMAGE URL] : The url where the image is hosted
+- [TITLE] : The title of the book
+- [AUTHOR] : The author of the book
+- [CATEGORY ID] : The category id of the book
+- [CATEGORY] : The category of the book
 
-# A list of internal milestones up until project milestone 2
-- 05/11/2018 - 11/11/2018: Data collection and wrangling
-- 12/11/2018 - 18/11/2018: Data analysis
-- 19/11/2018 - 25/11/2018: Data Visualization
+# Process
+
+First, we merge the two dataset. The first one is composed of three tsv files compressed with gzip. The second one is a csv file of 50 Mb only. This small size is not a problem for the merge, because what we want is to have the corresponding image for each review. Since some reviews may corresponds to the same book, it's very likely that each line of the cover dataset will be used several times.
+
+After the merge, we end up with a pandas dataframe of length 1'841'789. We save the corresponding csv as merge.csv (~1.53 Go).
+
+At first glance, the research questions seem pretty simple to answer. The main trouble we have is concerning the ratings. Indeed, we cannot simply consider the 5-stars rating system to judge whether someone likes the book or not. This is because most of the reviews (71%) give the maximum rating (5 stars). Statistic are less meaningful with such a bias.
+
+We have two possibilities to overcome this issue. The first one is to remove every reviewers whose reviews are low in terms of discriminative powers (i.e. they always give the same rating). The second one, more difficult, is to infer a star rating using only the text reviews.
+
+Therefore, we will use text classification to find a model which can be used to predict the ratings of each review. We will split our dataset into a train set and a test set. Once the model have a good accuracy, we will set weights to both the prediction and the actual star rating, in order to compute an adjusted star rating. We will keep a floating point precision for this new score.
+
+Once we have this new attribute, we will put it in relation with the book cover image to see if we can find a relationship. Also, we will see how this new score evolves over time. 
+
+# A list of internal milestones up until project milestone 3
+-
 
 # Questions for TAa
 The provided dataset does not seem to have image information for the cover. Do we missed it ? Should we merge with another dataset ?
